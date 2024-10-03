@@ -212,8 +212,8 @@ export default function WelcomePg () {
       {showModal && (
         <div className="modal fade show" style={{ display: 'block' }} aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
+            <div className="modal-content rounded-4">
+              <div className="modal-header py-2">
                 <button type="button" className="btn-close" value={0} onClick={closeModal} aria-label="Close"></button>
               </div>
             

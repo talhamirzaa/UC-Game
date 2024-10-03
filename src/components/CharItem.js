@@ -136,8 +136,9 @@ const updateValue = (key, newValue) => {
       {showModal && (
         <div className="modal fade show" style={{ display: 'block' }} aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
+            <div className="modal-content rounded-4">
+              <div className="modal-header py-2">
+                
                 <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
               </div>
               {(eliminatedRole === "Under Cover" && currPlayer !== 3 )  && (
@@ -164,9 +165,9 @@ const updateValue = (key, newValue) => {
                 </div>
               )}
               
-              <div className="modal-footer">
+              <div className="modal-footer py-1">
               {(eliminatedRole === "Under Cover" || currPlayer === 3 ) && (
-               <button type="button" className="btn btn-dark rounded-pill px-4" onClick={seePoints}>Points Table</button>
+               <button type="button" className="btn btn-outline-dark rounded-pill px-3" onClick={seePoints}>Points Table</button>
               )}
                 <button type="button" className="btn btn-dark rounded-pill w-25" onClick={closeModal}>OK</button>
                 

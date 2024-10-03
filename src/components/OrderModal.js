@@ -18,9 +18,9 @@ export default function OrderModal(props) {
         {showModal && (
         <div className="modal fade show" style={{ display: 'block' }} aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
+            <div className="modal-content mx-2 rounded-4">
              
-                <div className="modal-body fw-bold">
+                <div className="modal-body fw-bold mb-0">
                   {props.head}
                   <br />Order of Explaination:<br />
                   <ol className="text-uppercase fw-normal">
