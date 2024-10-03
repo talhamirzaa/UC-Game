@@ -88,7 +88,6 @@ const updateValue = (key, newValue) => {
 
   }
   
-  
   return (
     <>
       {/* <h4>{currPlayer}</h4> */}
@@ -98,7 +97,7 @@ const updateValue = (key, newValue) => {
             <div className="card-front" onClick={handleCardClick}>
               <div className="h-100 d-flex flex-column">
                 <div className="align-item-center mt-1">
-                  <h5 className="text-center text-uppercase" >{id || `Player`}</h5>
+                  <h5 className="text-center text-uppercase mx-3 text-truncate">{id || `Player`}</h5>
                   <img className="plr-icon mt-0" alt="" srcSet="/icon.png" />
                 </div>
                 {/* <div className="mt-auto mx-2 mb-1">
