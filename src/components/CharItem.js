@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CharItem.css';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from './GlobalContext';
+import ConfettiEffect from './ConfettiEffect';
 
 export default function CharItem({ id, word, role, showNewButton, onEliminate, currPlayer, onupdt }) {
   const [flipped, setFlipped] = useState(false);
@@ -39,6 +40,7 @@ export default function CharItem({ id, word, role, showNewButton, onEliminate, c
 
   const closeModal = () => {
    
+    setConfettiVisible(false);
     setShowModal(false);
     //console.log(id, "chkn:", eliminatedRole);
     if (eliminatedRole === "Under Cover") {
@@ -87,10 +89,27 @@ const updateValue = (key, newValue) => {
     navigate(path);
 
   }
+
+  //winning celeb
+  const [confettiVisible, setConfettiVisible] = useState(false);
+
+
+  const handleWinningCondition = () => {
+    if (eliminatedRole === "Under Cover" || (eliminatedRole === "civilian" && currPlayer === 3)) {
+      setConfettiVisible(true);
+      //setTimeout(() => setConfettiVisible(false), 4000);
+    }
+  };
+
+  // Call this function when the modal is shown
+  React.useEffect(() => {
+    if (showModal) {
+      handleWinningCondition();
+    }
+  }, [showModal]);
   
   return (
     <>
-      {/* <h4>{currPlayer}</h4> */}
       {isVisible && ( // Render the div only if isVisible is true
         <div className="my-2">
           <div className={`shadow card ${flipped ? 'flipped' : ''}`} id={id}>
@@ -100,9 +119,8 @@ const updateValue = (key, newValue) => {
                   <h5 className="text-center text-uppercase mx-3 text-truncate">{id || `Player`}</h5>
                   <img className="plr-icon mt-0" alt="" srcSet="/icon.png" />
                 </div>
-                {/* <div className="mt-auto mx-2 mb-1">
-                  {finalFlipped && <button className="btn btn-danger btn-block border rounded-pill w-100" onClick={dltCard}>Eliminate</button>}
-                </div> */}
+                {finalFlipped && <h5 className='align-self-center mt-4 fs-3 text-success'><i className="bi bi-check-circle-fill"></i></h5>}
+                
                 <div className="mt-auto mx-3 mb-3 rounded-pill bg-light">
                   {showNewButton && <button className="btn btn-outline-danger btn-block border rounded-pill w-100 fw-bold" onClick={dltCard}>Eliminate</button>}
                 </div>
@@ -131,6 +149,7 @@ const updateValue = (key, newValue) => {
         </div>
       )}
 
+      {confettiVisible && <ConfettiEffect width={window.innerWidth} height={window.innerHeight} />}
       {/* modal popup */}
       {showModal && (
         <div className="modal fade show" style={{ display: 'block' }} aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -175,6 +194,7 @@ const updateValue = (key, newValue) => {
           </div>
         </div>
       )}
+      
     </>
   );
 };

@@ -1,7 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-//import Wall from './components/Wall';
 import WelcomePg from './components/WelcomePg';
 import PickCard from './components/PickCard';
 import Eliminate from './components/Eliminate';
@@ -17,7 +16,6 @@ function App() {
     <BrowserRouter>
     <NavBar/>  
      
-    
     <div className="container">
         <GlobalProvider>
           <Routes>
@@ -32,8 +30,7 @@ function App() {
             <Route path="/Points" element={<PointsTable/>}>
             </Route>
             <Route path="/AboutGm" element={<AboutGame/>}>
-            </Route>
-            
+            </Route>    
 
           </Routes>
           </GlobalProvider>
