@@ -199,7 +199,7 @@ export default function WelcomePg () {
                 
 
             <div className="container mx-auto" style={mystyle}>
-                <label htmlFor="" className="text-secondary">Tip:-</label>
+                <label htmlFor="" className="fst-italic">Tip:-</label>
                 <h6 className='mt-2'>All <label htmlFor="" className="text-success">Civilians</label> will get the same Word.</h6>
                 <h6 className='fs-6'>The <label htmlFor="" style={{color:'purple'}}>Undercover</label> Will get a Slightly Different Word than Civilians.</h6>
             </div>

@@ -1,11 +1,7 @@
-/*.card-container {
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
+body {
+    overscroll-behavior: contain; /* Prevents pull-to-refresh */
 }
-*/
+
 
 .plr-icon{
     width: 50%;

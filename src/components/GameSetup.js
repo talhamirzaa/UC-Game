@@ -74,7 +74,7 @@ const GameSetup = () => {
             <h4 className='text-center text-uppercase '>Welcome to the game of</h4>
             <div className="d-flex flex-row justify-content-center">
             <h3 className='text-uppercase fw-bold mx-1'>Undercover!</h3>
-            <Link to="/AboutGm" className="fst-italic text-lowercase fw-normal align-self-end" style={{fontSize:'11px'}} >know more</Link>
+            <Link to="/AboutGm" className="fst-italic text-lowercase fw-normal text-secondary mt-0 align-self-end" style={{fontSize:'10px'}} >know more</Link>
             </div>
             
            
@@ -98,7 +98,7 @@ const GameSetup = () => {
                 <div className="mb-2" key={index}>
                     <input
                         type="text"
-                        className="form-control" 
+                        className="form-control rounded-pill" 
                         placeholder={`Player ${index + 1} Name`}
                         value={playerNames[index]}
                        

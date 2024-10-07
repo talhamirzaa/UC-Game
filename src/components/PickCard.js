@@ -9,7 +9,7 @@ export default function PickCard() {
     return (
         <div>            
             <Wall oneElemBt= {true} showNewButton={false} /> {/* No new button on this page */}
-            <OrderModal/>
+            <OrderModal note='true'/>
         </div>
     );
 }

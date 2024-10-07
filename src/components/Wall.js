@@ -67,7 +67,7 @@ export default function Wall({ oneElemBt, showNewButton }) {
                     <label className='fs-6'>Open Your Card and Explain the Word.</label> 
                     <i className="bi bi-info-circle text-secondary" onClick={seeOrdr}></i>
                     {modals.map((_, index) => (
-                        <OrderModal key={index} />
+                        <OrderModal key={index} note='true'/>
                     ))}
                 </div>
                  )}

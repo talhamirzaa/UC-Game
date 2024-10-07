@@ -19,7 +19,7 @@ export default function Eliminate() {
                     <label className="fs-5">Elimination Round</label> 
                     <i className="bi bi-info-circle text-secondary" onClick={seeOrdr}></i>
                     {modals.map((_, index) => (
-                        <OrderModal key={index} head="skip/ignore the Eliminated player." />
+                        <OrderModal key={index} head="skip/ignore the Eliminated player." note='false' />
                     ))}
                 </div>
             <Wall oneElemBt={false} showNewButton={true} /> {/* New button displayed on this page */}

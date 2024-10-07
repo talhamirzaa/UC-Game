@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { MdArrowBackIos } from "react-icons/md";
 
 export default function AboutGame() {
 
@@ -14,7 +15,9 @@ export default function AboutGame() {
 
   return (
     <div className="container d-flex flex-column" style={{height: '90dvh'}}>
-      <Link to="/" className="mt-2" style={{fontSize:'17px',color:'purple'}} ><i className="bi bi-arrow-left p-0"></i></Link>
+      
+      
+      <Link to="/" className="mt-1" style={{fontSize:'20px',color:'rgb(66, 48, 66)'}} ><MdArrowBackIos /></Link>
       <div className='my-1 mx-1 lh-1' style={myst}>
         The <i className="fw-bold">Undercover</i> Game is a social deduction party game where players take on the roles of either civilians or an undercover agent (UC). Each player receives a word or phrase, but the UC's word is different from the civilians. The objective for the civilians is to identify the UC by explaining their word to the group one by one, while the UC attempts to blend in and avoid detection.
       </div>
@@ -45,8 +48,8 @@ export default function AboutGame() {
       </div>
 
         <div className="align-self-center mt-auto fs-6">
-          <div>Developed by @ <a href="https://github.com/talhamirzaa" className="text-decoration-none1 fw-bold text-dark fst-italic">TM</a></div>
-        Copyright<i className="bi bi-c-circle mx-2"></i>{a}
+          <div>Developed by @ <a href="https://github.com/talhamirzaa" target='_blank' className="fw-bold text-dark fst-italic">TM</a></div>
+        Copyright<i className="bi bi-c-circle mx-1"></i>{a}
         </div>
       
     </div>

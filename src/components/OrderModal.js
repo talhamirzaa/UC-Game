@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useGlobalContext } from './GlobalContext';
 
-export default function OrderModal(props) {
+export default function OrderModal(props) {  
 
     const {shuffled } = useGlobalContext();
 
@@ -11,6 +11,8 @@ export default function OrderModal(props) {
     {
         setShowModal(false);
     }
+
+    let x=props.note;
 
     //console.log(shuffled)
   return (
@@ -29,10 +31,10 @@ export default function OrderModal(props) {
                   ))}
                   </ol>
                 </div>
-                 <div className='mx-2 mb-2 lh-1'>
+                 {x==='true' && <div className='mx-2 mb-2 lh-1'>
                  <b>Note:</b>
                  <label className='fst-italic' style={{fontSize:'15px'}}>This symbol<i className="bi bi-check-circle-fill mx-1 text-success"></i>on the card means it has been opened & cannot be opened again.</label>
-                  </div> 
+                  </div> }
               <div className="modal-footer py-1">
                 <button type="button" className="btn btn-block btn-dark rounded-pill w-25 " style={{letterSpacing:'1px'}} onClick={closeModal}>OK</button>
                

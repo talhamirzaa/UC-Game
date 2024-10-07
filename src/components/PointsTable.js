@@ -1,7 +1,7 @@
-// CardsComponent.js
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from './GlobalContext';
+
 
 export default function PointsTable () {
     const { point , setPoint} = useGlobalContext();
@@ -31,7 +31,6 @@ export default function PointsTable () {
       navigate(path);
   }
     
-    
     return (
       <div className="container d-flex flex-column" style={{height: '90dvh'}}>
 
@@ -39,20 +38,20 @@ export default function PointsTable () {
                 <table className="table table-borderless mx-auto w-75">
                 <thead >
                   <tr className="fs-5">
-                    <th scope="col">Players</th>
+                    <th scope="col" className='text-center'>Players</th>
                     <th scope="col" className="text-center">Points</th>
                   </tr>
                 </thead>
                 <tbody className="text-uppercase">
                 {Object.entries(point).map(([key, value]) => (
                         <tr key={key}>
-                            <td>{key}</td>
-                            <td className="text-center">{value}</td>
+                              <td style={{fontFamily:'revert'}} className='text-center'>{key}</td>
+                            <td className="text-center fw-bold">{value}</td>
                         </tr>
                     ))}
                 </tbody>
               </table>
-              <button className="btn btn-danger btn-block border rounded-pill w-100" onClick={reset}>Reset Points</button>
+              <button className="btn btn-danger btn-block border rounded-pill w-75 align-self-center" onClick={reset}>Reset Points</button>
               
               <div className="mt-auto mb-4 d-flex flex-column">
                 <button type="button" className="btn btn-outline-dark btn-block rounded-pill w-100"

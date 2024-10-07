@@ -119,11 +119,11 @@ const updateValue = (key, newValue) => {
                   <h5 className="text-center text-uppercase mx-3 text-truncate">{id || `Player`}</h5>
                   <img className="plr-icon mt-0" alt="" srcSet="/icon.png" />
                 </div>
-                {finalFlipped && <h5 className='align-self-center mt-4 fs-3 text-success'><i className="bi bi-check-circle-fill"></i></h5>}
+                {finalFlipped && <h5 className='align-self-center mt-auto fs-3 text-success' style={{marginBottom:'2dvh'}}><i className="bi bi-check-circle-fill"></i></h5>}
                 
-                <div className="mt-auto mx-3 mb-3 rounded-pill bg-light">
-                  {showNewButton && <button className="btn btn-outline-danger btn-block border rounded-pill w-100 fw-bold" onClick={dltCard}>Eliminate</button>}
-                </div>
+                {showNewButton && <div className="mt-auto mx-3 mb-3 rounded-pill bg-light">
+                  <button className="btn btn-outline-danger btn-block border rounded-pill w-100 fw-bold " onClick={dltCard}>Eliminate</button>
+                </div>}
               </div>
             </div>
             <div className="card-back">
@@ -138,8 +138,8 @@ const updateValue = (key, newValue) => {
                   <br />
                   <label id="wrd"><b>{word}</b></label>
                 </div>
-                <div className="mt-auto mx-3" style={{marginBottom:'2dvh'}}>
-                  <button className="btn btn-dark btn-block border rounded-pill w-100" onClick={handleButtonClick}>
+                <div className="mt-auto mx-4" style={{marginBottom:'2dvh'}}>
+                  <button className="btn btn-outline-success btn-block py-1 rounded-pill w-100" onClick={handleButtonClick}>
                     Done
                   </button>
                 </div>
