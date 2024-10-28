@@ -7,21 +7,33 @@ export default function AboutGame() {
     const d = new Date();
     let a=d.getFullYear()
 
+    let tst = {
+      position: 'fixed',
+      top:'0',
+      width:'100%',
+      color:'#F5F5DC',
+      backgroundImage:`url(./abt_gm.png)`,
+      backgroundRepeat:'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition:'center'
+    }
+
     let myst={
-        fontSize:'15px',
+        fontSize:'1.1rem',
         textAlign: 'justify',
-        
     }
 
   return (
-    <div className="container d-flex flex-column" style={{height: '90dvh'}}>
+    <>
+    <div className="d-flex flex-column min-vh-100" style={tst}>
+    <div className="container d-flex flex-column col col-lg-8 mx-auto mt-5" style={{fontFamily:'cursive'}}>
       
       
-      <Link to="/" className="mt-1" style={{fontSize:'20px',color:'rgb(66, 48, 66)'}} ><MdArrowBackIos /></Link>
-      <div className='my-1 mx-1 lh-1' style={myst}>
+      <Link to="/" className="mt-3 text-light" style={{fontSize:'20px'}} ><MdArrowBackIos /></Link>
+      <div className='my-2 mx-1 lh-1 mt-md-3' style={myst}>
         The <i className="fw-bold">Undercover</i> Game is a social deduction party game where players take on the roles of either civilians or an undercover agent (UC). Each player receives a word or phrase, but the UC's word is different from the civilians. The objective for the civilians is to identify the UC by explaining their word to the group one by one, while the UC attempts to blend in and avoid detection.
       </div>
-      <div className="lh-1 mx-1" style={myst}>
+      <div className="lh-1 mx-1 mt-md-3" style={myst}>
       <h6 className='fw-bold'>Gameplay Mechanics:</h6>
       <ol>
         <li>
@@ -37,21 +49,18 @@ export default function AboutGame() {
             <b>Voting: </b> After all players have explained their words, a vote is held to identify the UC. If the UC is correctly identified, civilians win; if not, the UC wins.
         </li>
       </ol>
-        {/* <label>
-        The game relies on communication, bluffing, and deduction, making it <i>fun</i> and <i>engaging</i> for groups.
-            </label> */}
         <i className="mt-2 text-warning">Disclaimer:- </i>
         <label className="mt-1 ">
             This Game is for Entertainment purpose only.
         </label>
-        <label className="mt-2 fw-bold font-monospace" style={{color:'purple'}}>The Game Works Best on Mobile.</label>
-      </div>
-
-        <div className="align-self-center mt-auto fs-6">
-          <div>Developed by @ <a href="https://github.com/talhamirzaa" target='_blank' className="fw-bold text-dark fst-italic">TM</a></div>
-        Copyright<i className="bi bi-c-circle mx-1"></i>{a}
-        </div>
-      
+      </div>      
     </div>
+
+     <footer className='bg-secondary text-light text-center py-3 mt-auto fs-6 rounded-1 '>
+     <div>Developed by @ <a href="https://github.com/talhamirzaa" target='_blank' className="fw-bold text-dark fst-italic fs-5">TM</a></div>
+        Copyright<i className="bi bi-c-circle mx-1"></i>{a}
+   </footer>
+   </div>
+   </>
   )
 }

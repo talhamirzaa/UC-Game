@@ -16,25 +16,35 @@ function App() {
     <BrowserRouter>
     <NavBar/>  
      
-    <div className="container">
+    
         <GlobalProvider>
+        <div className="container" >
           <Routes>
             <Route path="/NewGame" element={<WelcomePg/>}>
             </Route>
             <Route path="/PickCard" element={<PickCard/>}>
             </Route>
-            <Route path="/Elimiate" element={<Eliminate/>}>
+            <Route path="/Eliminate" element={<Eliminate/>}>
             </Route>
             <Route path="/" element={<GameSetup />}>
             </Route>
             <Route path="/Points" element={<PointsTable/>}>
             </Route>
-            <Route path="/AboutGm" element={<AboutGame/>}>
+            {/* <Route path="/AboutGm" element={<AboutGame/>}>
+            </Route>     */}
+
+          </Routes>
+          </div>
+
+          <Routes>
+          <Route path="/AboutGm" element={<AboutGame/>}>
             </Route>    
 
           </Routes>
           </GlobalProvider>
-    </div>
+          <Routes>
+    <Route path="/AboutGm" element={<AboutGame />} />
+  </Routes>
     </BrowserRouter>
     </>
   );

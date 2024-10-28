@@ -56,20 +56,23 @@ const GameSetup = () => {
     };
 
     let mystyle={
-        marginTop : '20%',
+        marginTop : '10svh',
     }
 
     let btnclr={
         backgroundColor:'rgb(66, 48, 66)',
         color:'white'
     }
+   
 
 
     return (
-        <div className="container d-flex flex-column" style={{height: '90dvh'}}>
-            <Alert/>
+        <>
+        
+        <div className="container d-flex flex-column col col-lg-5 mx-auto gm_cont" style={{height: '90dvh'}}>
+            {/* <Alert/> */}
 
-            <div className="" style={mystyle}>
+            <div className="mt-xl-4" style={mystyle}>
             
             <h4 className='text-center text-uppercase '>Welcome to the game of</h4>
             <div className="d-flex flex-row justify-content-center">
@@ -111,6 +114,8 @@ const GameSetup = () => {
         <button type="button" className="btn btn-dark btn-block rounded-pill w-100 mt-auto mb-4" 
             onClick={handleSubmit}>Get Ready</button>
         </div>
+        
+        </>
         
     );
 };

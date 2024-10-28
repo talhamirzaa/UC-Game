@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <>
           <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-1" >
   <div className="container-fluid">
     <Link className="navbar-brand bg-transparent" to="/" id="nvnm"> <img className="w-75" src="/test_logo_rsz.png" alt="uc"/></Link>
     {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

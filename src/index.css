@@ -2,9 +2,22 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background: none; /* No background for mobile/tablet */
+}
+
+/* Styles for desktop */
+@media (min-width: 768px) { /* Adjust this width as needed */
+  body {
+    background-image: url('../public/uc_img.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+  }
 }
 
 code {

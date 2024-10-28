@@ -178,20 +178,19 @@ export default function WelcomePg () {
       };
 
     let mystyle={
-        marginTop : '70%',
+        marginTop : '25dvh',
         width:'95%',
         textAlign: 'justify'
     }
-
     return (
         <>
-        <div className="container d-flex flex-column" style={{height: '90dvh'}}>
+        <div className="container d-flex flex-column col col-lg-5 mx-auto gm_cont" style={{height: '90dvh'}}>
             
             <div className="d-flex flex-row-reverse mt-4">
-                <button type="button" className="btn btn-outline-dark border-0 rounded-pill px-2 py-0 fs-5"
+                <button type="button" className="btn btn-outline-dark border-0 rounded-pill px-2 py-0 fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Restart Game"
                     onClick={reset}><i className="bi bi-house-door-fill"></i>
                 </button>
-                <button type="button" className="btn btn-outline-dark btn-block border-0 rounded-pill px-2 py-0 fs-5 mx-1"
+                <button type="button" className="btn btn-outline-dark btn-block border-0 rounded-pill px-2 py-0 fs-5 mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Points Table"
                     onClick={seePoints}><i className="bi bi-list-ul"></i>
                 </button>
                 

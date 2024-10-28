@@ -14,7 +14,9 @@ export default function OrderModal(props) {
 
     let x=props.note;
 
-    //console.log(shuffled)
+    // console.log(shuffled)
+    // var filteredArray = shuffled.filter(e => e !== 'a')
+    // console.log("new ary",filteredArray);
   return (
     <>
         {showModal && (
@@ -23,8 +25,8 @@ export default function OrderModal(props) {
             <div className="modal-content mx-2 rounded-4">
              
                 <div className="modal-body fw-bold mb-0">
-                  {props.head}
-                  <br />Order of Explaination:<br />
+                  <div className='fw-normal' style={{fontSize:'0.8rem'}}>{props.head}</div>
+                  Order of Explaination:<br />
                   <ol className="text-uppercase fw-normal">
                   {shuffled.map((item, index) => (
                     <li key={index}>{item}</li>

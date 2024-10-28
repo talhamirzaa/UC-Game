@@ -17,7 +17,7 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;
-    font-size: 16px;
+    font-size:2vh;
     border-radius: 10%;
 }
 
@@ -47,5 +47,10 @@ body {
     color: purple;
     /* color: rgb(66, 48, 66); */
     text-transform: uppercase;
+    
 }
 
+.gm_cont{
+    border-radius: 4%;
+    background-color: white;
+}

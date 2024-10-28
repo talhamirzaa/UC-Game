@@ -3,6 +3,7 @@ import './CharItem.css';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from './GlobalContext';
 import ConfettiEffect from './ConfettiEffect';
+import OrderModal from './OrderModal';
 
 export default function CharItem({ id, word, role, showNewButton, onEliminate, currPlayer, onupdt }) {
   const [flipped, setFlipped] = useState(false);
@@ -10,6 +11,7 @@ export default function CharItem({ id, word, role, showNewButton, onEliminate, c
   const [showModal, setShowModal] = useState(false);
   const [eliminatedRole, setEliminatedRole] = useState('');
   const [isVisible, setIsVisible] = useState(true); // State to control visibility
+  const [modals, setModals] = useState([]);
   
   const { setPoint } = useGlobalContext();
 
@@ -43,13 +45,16 @@ export default function CharItem({ id, word, role, showNewButton, onEliminate, c
     setConfettiVisible(false);
     setShowModal(false);
     //console.log(id, "chkn:", eliminatedRole);
-    if (eliminatedRole === "Under Cover") {
+    if (eliminatedRole === "Under Cover") 
+    {
+      setShowModal(false);
       updateValue(id,2)
       let path = `/NewGame`;
       navigate(path);
     } 
     else if(currPlayer===3)
     {
+      setShowModal(false);
       onEliminate();
       onupdt(5)
       let path = `/NewGame`;
@@ -57,12 +62,17 @@ export default function CharItem({ id, word, role, showNewButton, onEliminate, c
     }
     else 
     {
+      seeOrdr() // Add a new modal instance
       onEliminate();
     }
 
     setIsVisible(false);
 
   };
+  const seeOrdr = () => {
+    setModals([...modals, {}]); // Add a new modal instance
+  };
+
   
 // to asgn points to rest all
 const updateValue = (key, newValue) => {
@@ -121,8 +131,8 @@ const updateValue = (key, newValue) => {
                 </div>
                 {finalFlipped && <h5 className='align-self-center mt-auto fs-3 text-success' style={{marginBottom:'2dvh'}}><i className="bi bi-check-circle-fill"></i></h5>}
                 
-                {showNewButton && <div className="mt-auto mx-3 mb-3 rounded-pill bg-light">
-                  <button className="btn btn-outline-danger btn-block border rounded-pill w-100 fw-bold " onClick={dltCard}>Eliminate</button>
+                {showNewButton && <div className="mt-auto mx-3 mb-3 mb-lg-2 rounded-pill bg-light">
+                  <button className="btn btn-outline-danger border rounded-pill w-100 fw-bold py-lg-1" onClick={dltCard}>Eliminate</button>
                 </div>}
               </div>
             </div>
@@ -139,7 +149,7 @@ const updateValue = (key, newValue) => {
                   <label id="wrd"><b>{word}</b></label>
                 </div>
                 <div className="mt-auto mx-4" style={{marginBottom:'2dvh'}}>
-                  <button className="btn btn-outline-success btn-block py-1 rounded-pill w-100" onClick={handleButtonClick}>
+                  <button className="btn btn-outline-success btn-block py-1 py-lg-0 rounded-pill w-100" onClick={handleButtonClick}>
                     Done
                   </button>
                 </div>
@@ -152,8 +162,8 @@ const updateValue = (key, newValue) => {
       {confettiVisible && <ConfettiEffect width={window.innerWidth} height={window.innerHeight} />}
       {/* modal popup */}
       {showModal && (
-        <div className="modal fade show" style={{ display: 'block' }} aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div className="modal-dialog modal-dialog-centered">
+        <div className="modal fade show " style={{ display: 'block' }} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered ">
             <div className="modal-content rounded-4">
               <div className="modal-header py-2">
                 
@@ -188,12 +198,20 @@ const updateValue = (key, newValue) => {
                <button type="button" className="btn btn-outline-dark rounded-pill px-3" onClick={seePoints}>Points Table</button>
               )}
                 <button type="button" className="btn btn-dark rounded-pill w-25" onClick={closeModal}>OK</button>
+                    {modals.map((_, index) => (
+                        <OrderModal key={index} head="skip/ignore the Eliminated player." note='false' />
+                    ))}
                 
               </div>
             </div>
           </div>
         </div>
+        
       )}
+
+                {modals.map((_, index) => (
+                        <OrderModal key={index} head="skip/ignore the Eliminated player." note='false' />
+                    ))}
       
     </>
   );

@@ -12,7 +12,7 @@ export default function Wall({ oneElemBt, showNewButton }) {
 
     let navigate = useNavigate();
     const routeChange = () => {
-        let path = `/Elimiate`;
+        let path = `/Eliminate`;
         navigate(path, { state: { rNum: rNum } });
     }
 
@@ -61,16 +61,32 @@ export default function Wall({ oneElemBt, showNewButton }) {
     return (
         <>
         {/* <h3>Visible CharItems: {visibleCount}</h3> */}
-            <div className="container d-flex flex-column" style={{height: '90dvh'}}>
+            <div className="container d-flex flex-column col col-lg-5 mx-auto gm_cont" style={{height: '90dvh'}}>
             {oneElemBt && ( 
                  <div className="my-2 mx-2 d-flex justify-content-between p-0"> 
-                    <label className='fs-6'>Open Your Card and Explain the Word.</label> 
-                    <i className="bi bi-info-circle text-secondary" onClick={seeOrdr}></i>
+                    <label className='fs-6 fw-bold'>Open Your Card and Explain the Word.</label> 
+                    <i className="bi bi-info-circle" style={{color: 'rgb(66, 48, 66)'}} role="button" onClick={seeOrdr}></i>
                     {modals.map((_, index) => (
                         <OrderModal key={index} note='true'/>
                     ))}
                 </div>
                  )}
+                
+                 {!oneElemBt  && ( 
+                 <div className="my-2 mx-2 d-flex justify-content-between p-0"> 
+                    <label className='fs-6 fw-bold'>Elimination Round</label> 
+                    { numPlayers > 3 && ( 
+                    <>
+                    <i className="bi bi-info-circle" style={{color: 'rgb(66, 48, 66)'}} role="button" onClick={seeOrdr}></i>
+                    {modals.map((_, index) => (
+                        <OrderModal key={index} head="skip/ignore the Eliminated player." note='false' />
+                    ))}
+                    </>
+                    )}
+                </div>
+                 )} 
+                
+                
                 <div className="row ">
                     {playerNames.map((id, index) => (
                         id && (
