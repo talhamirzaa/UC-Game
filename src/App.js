@@ -42,9 +42,6 @@ function App() {
 
           </Routes>
           </GlobalProvider>
-          <Routes>
-    <Route path="/AboutGm" element={<AboutGame />} />
-  </Routes>
     </BrowserRouter>
     </>
   );

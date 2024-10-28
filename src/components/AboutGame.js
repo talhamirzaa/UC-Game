@@ -8,7 +8,7 @@ export default function AboutGame() {
     let a=d.getFullYear()
 
     let tst = {
-      position: 'fixed',
+      position: 'relative',
       top:'0',
       width:'100%',
       color:'#F5F5DC',
@@ -26,7 +26,7 @@ export default function AboutGame() {
   return (
     <>
     <div className="d-flex flex-column min-vh-100" style={tst}>
-    <div className="container d-flex flex-column col col-lg-8 mx-auto mt-5" style={{fontFamily:'cursive'}}>
+    <div className="container d-flex flex-column col col-lg-8 mx-auto my-3" style={{fontFamily:'monospace'}}>
       
       
       <Link to="/" className="mt-3 text-light" style={{fontSize:'20px'}} ><MdArrowBackIos /></Link>
@@ -53,6 +53,7 @@ export default function AboutGame() {
         <label className="mt-1 ">
             This Game is for Entertainment purpose only.
         </label>
+        <br /><br />
       </div>      
     </div>
 
